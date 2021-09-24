@@ -48,7 +48,7 @@ installdeluge () {
 	apt-get update -y &>/dev/null
 	echo "  $(tput setaf 2)DONE$(tput sgr0)"
 	echo -n " Installing deluged deluge-webui..."
-	apt-get install deluged deluge-webui -y &>/dev/null
+	apt-get install deluged deluge-web -y &>/dev/null
 	echo "  $(tput setaf 2)DONE$(tput sgr0)"
 	echo ""
 	
@@ -101,7 +101,7 @@ uninstalldeluge () {
 			rm -f /etc/default/deluge-daemon
 			rm -f /etc/init.d/deluge-daemon
 			update-rc.d -f deluge-daemon remove
-			apt-get remove --purge deluged deluge-webui -y &>/dev/null
+			apt-get remove --purge deluged deluge-web -y &>/dev/null
 			apt-get autoremove -y &>/dev/null
 			apt-get autoclean -y &>/dev/null
 			echo " Deluge Uninstalled"
